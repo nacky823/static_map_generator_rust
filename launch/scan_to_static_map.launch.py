@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: Yuki NAGAKI <youjiyongmu4@gmail.com>
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: BSD-3-Clause
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument

@@ -4,7 +4,7 @@
   <version>0.1.0</version>
   <description>Generate a static occupancy grid map from scan map history</description>
   <maintainer email="youjiyongmu4@gmail.com">NAGAKI Yuki</maintainer>
-  <license>MIT</license>
+  <license>BSD-3-Clause</license>
 
   <depend>nav_msgs</depend>
 
