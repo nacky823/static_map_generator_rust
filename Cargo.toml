@@ -8,5 +8,4 @@ rclrs = "*"
 nav_msgs = "*"
 
 [package.metadata.ros]
-launch = ["launch"]
-config = ["config"]
+install_to_share = ["launch", "config"]
