@@ -530,6 +530,10 @@ name = "shape_msgs"
 version = "4.2.4"
 
 [[patch.unused]]
+name = "static_map_generator_rust"
+version = "0.1.0"
+
+[[patch.unused]]
 name = "statistics_msgs"
 version = "1.2.1"
 
