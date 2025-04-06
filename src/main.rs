@@ -31,3 +31,20 @@ fn generate_static_map(buffer: &Vec<OccupancyGrid>) -> Option<OccupancyGrid> {
 
     Some(result)
 }
+
+fn main() -> Result<(), rclrs::RclrsError> {
+    let context = rclrs::Context::new(std::env::args())?;
+    let node = rclrs::Node::new(&context, "static_map_generator")?;
+
+    let map_buffer = Arc::new(Mutex::new(Vec::<OccupancyGrid>::new()));
+    let map_buffer_sub = Arc::clone(&map_buffer);
+
+    let _sub = node.create_subscription("scan_map", rclrs::QOS_PROFILE_DEFAULT, 
+        move |msg: OccupancyGrid| {
+            let mut buf = map_buffer_sub.lock().unwrap();
+            buf.push(msg);
+            if buf.len() > 30 {
+                buf.remove(0); // 最大30個保持
+            }
+        }
+    )?;
