@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>static_map_generator_rust</name>
+  <version>0.1.0</version>
+  <description>Generate a static occupancy grid map from scan map history</description>
+  <maintainer email="youjiyongmu4@gmail.com">NAGAKI Yuki</maintainer>
+  <license>MIT</license>
+
+  <depend>nav_msgs</depend>
+
+  <export>
+    <build_type>ament_cargo</build_type>
+  </export>
+</package>
