@@ -22,10 +22,12 @@ fn generate_static_map(buffer: &Vec<OccupancyGrid>) -> Option<OccupancyGrid> {
         }
     }
 
-    let threshold = (buffer.len() as u32 * 70) / 100;
-    result.data.iter_mut().enumerate().for_each(|(i, v)| {
-        *v = if counter[i] >= threshold { 100 } else { 0 };
-    });
+    let threshold = (buffer.len() as u32 * 7) / 10;
+    result.data.iter_mut().enumerate().for_each(
+        |(i, v)| {
+            *v = if counter[i] >= threshold { 100 } else { 0 };
+        }
+    );
 
     Some(result)
 }
