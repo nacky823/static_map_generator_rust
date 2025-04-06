@@ -6,3 +6,7 @@ edition = "2021"
 [dependencies]
 rclrs = "*"
 nav_msgs = "*"
+
+[package.metadata.ros]
+launch = ["launch"]
+config = ["config"]
