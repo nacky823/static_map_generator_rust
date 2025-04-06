@@ -48,3 +48,22 @@ fn main() -> Result<(), rclrs::RclrsError> {
             }
         }
     )?;
+
+    let publisher = node.create_publisher::<OccupancyGrid>("static_map", rclrs::QOS_PROFILE_DEFAULT)?;
+    let publisher = Arc::new(publisher);
+    let publisher_loop = Arc::clone(&publisher);
+    let map_buffer_loop = Arc::clone(&map_buffer);
+
+    std::thread::spawn(move || {
+        loop {
+            std::thread::sleep(Duration::from_secs(1));
+            let buffer = map_buffer_loop.lock().unwrap();
+            if let Some(static_map) = generate_static_map(&buffer) {
+                publisher_loop.publish(static_map).unwrap();
+            }
+        }
+    });
+
+    println!("Generating /static_map from /scan_map buffer...");
+    rclrs::spin(node)
+}
