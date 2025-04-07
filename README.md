@@ -1,5 +1,5 @@
 # static_map_generator_rust
-この ROS 2 パッケージは、[ogm_flow_estimator_static](https://github.com/ryuichiueda/ogm_flow_estimator_static.git) を理解するために作成した練習用パッケージです。[ogm_flow_estimator_static](https://github.com/ryuichiueda/ogm_flow_estimator_static/tree/master/src) の実装を参考にして作成しました。公開してくださり、ありがとうございます。
+この ROS 2 パッケージは、[ogm_flow_estimator_static](https://github.com/ryuichiueda/ogm_flow_estimator_static.git) を理解するために作成した練習用パッケージです。[ogm_flow_estimator_static の実装](https://github.com/ryuichiueda/ogm_flow_estimator_static/tree/master/src)を参考にして作成しました。公開してくださり、ありがとうございます。
 
 ## Overview
 一定位置に静止した状態で取得したレーザスキャンデータを用い、
